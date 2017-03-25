@@ -1,7 +1,7 @@
 import requests
 
 
-def get_bars(latitude, longitude, cuisine, establishment_type):
+def get_bars(latitude, longitude, establishment_type):
 
     url = 'https://developers.zomato.com/api/v2.1/search'
 
@@ -10,7 +10,6 @@ def get_bars(latitude, longitude, cuisine, establishment_type):
               'lon': longitude,
               'sort': 'rating',
               'order': 'desc',
-              'cuisines': cuisine,
               'establishment_type': establishment_type,
               'radius': 2000.0,
               'count': 100}
