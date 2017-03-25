@@ -28,7 +28,7 @@
             }
         }
         function showPosition(position) {
-            window.history.pushState(null, "Location", "/food/"+position.coords.latitude+","+position.coords.longitude);
+            window.history.pushState(null, "Location", "/bars/"+position.coords.latitude+","+position.coords.longitude);
             location.reload();
         }
     </script>
