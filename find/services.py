@@ -30,7 +30,7 @@ def get_restaurants(latitude, longitude, establishment_type):
     bars_list = {'bars': server_establishments['restaurants']}
 
     # In case the list is blank, requery with no establishment type to broaden the search
-    if length(bars_list) <= 0 and establishment_type:
+    if len(bars_list) <= 0 and establishment_type:
       return get_bars(latitude, longitude, '')
 
     return bars_list
