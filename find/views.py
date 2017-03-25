@@ -26,7 +26,7 @@ def get_cafes(request, location):
                                               'lat': latitude,
                                               'longi': longitude})
 
-
+# TODO Actually look for parties.
 def get_parties(request, location):
     coordinates = location.split(',')
     latitude = coordinates[0]
