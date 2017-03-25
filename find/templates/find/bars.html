@@ -8,26 +8,26 @@
 	<script src="https://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
 	<script >
-		
+
 		var name_array=new Array();
 		var rating_array=new Array();
 		var lat_array=new Array();
-		var longi_array=new Array();	
+		var longi_array=new Array();
 		var url_array=new Array();
 		ctr = 0;
-		
+
 
 	</script>
 
 
-	{% for value in restaurants_list.restaurants %} 
+	{% for value in bars_list.bars %}
 	{% if not "Ice Cream" in value.restaurant.cuisines %}
 	{% if not "Bakery" in value.restaurant.cuisines %}
 	<script type="text/javascript">name_array.push('{{value.restaurant.name}}')</script>
 	<script type="text/javascript">rating_array.push('{{value.restaurant.user_rating.aggregate_rating}}')</script>
 	<script type="text/javascript">lat_array.push('{{value.restaurant.location.latitude}}')</script>
 	<script type="text/javascript">longi_array.push('{{value.restaurant.location.longitude}}')</script>
-	<script type="text/javascript">url_array.push('{{value.restaurant.url}}')</script> 
+	<script type="text/javascript">url_array.push('{{value.restaurant.url}}')</script>
 
 	{% endif %}
 	{% endif %}
@@ -43,13 +43,13 @@
 			<h1>Bhenchod, why don't you get drunk at</h1>
 			<a id="zomato_link" href="#"><h1 id="Rname" ></h1></a>
 			<!-- <h3 id="RRating" >Don't trust us Bhenchod, Zomato rates it at </h3> -->
-			
+
 		</br>
-		
-		
-		<button class="btn btn-danger btn-xlarge" onclick="showTitle();">That Place Sucks</button>		
-		
-		
+
+
+		<button class="btn btn-danger btn-xlarge" onclick="showTitle();">That Place Sucks</button>
+
+
 	</br>
 </br>
 

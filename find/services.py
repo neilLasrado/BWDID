@@ -1,7 +1,7 @@
 import requests
 
 
-def get_restaurants(latitude, longitude, cuisine, establishment_type):
+def get_bars(latitude, longitude, cuisine, establishment_type):
 
     url = 'https://developers.zomato.com/api/v2.1/search'
 
@@ -26,7 +26,7 @@ def get_restaurants(latitude, longitude, cuisine, establishment_type):
     r = requests.get(
         url=url, headers=header, params=params)
 
-    restaurants = r.json()
-    # This puts the best_rated_restaurants in a list. Refer to JSON Response.
-    restaurants_list = {'restaurants': restaurants['restaurants']}
-    return restaurants_list
+    server_establishments = r.json()
+    # This puts the best_rated_bars in a list. Refer to JSON Response.
+    bars_list = {'bars': server_establishments['restaurants']}
+    return bars_list
