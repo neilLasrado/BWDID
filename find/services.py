@@ -10,6 +10,7 @@ def get_bars(latitude, longitude, establishment_type):
               'lon': longitude,
               'sort': 'rating',
               'order': 'desc',
+              'category': '11',
               'establishment_type': establishment_type,
               'radius': 2000.0,
               'count': 100}
@@ -28,4 +29,9 @@ def get_bars(latitude, longitude, establishment_type):
     server_establishments = r.json()
     # This puts the best_rated_bars in a list. Refer to JSON Response.
     bars_list = {'bars': server_establishments['restaurants']}
+
+    # In case the list is blank, requery with no establishment type to broaden the search
+    if length(bars_list) <= 0 and establishment_type:
+      return get_bars(latitude, longitude, '')
+
     return bars_list
