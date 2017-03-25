@@ -12,7 +12,6 @@ def get_restaurants(latitude, longitude, cuisine, establishment_type):
               'order': 'desc',
               'cuisines': cuisine,
               'establishment_type': establishment_type,
-              'establishment_type':[6,7],
               'radius': 2000.0,
               'count': 100}
 
