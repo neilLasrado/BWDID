@@ -1,4 +1,5 @@
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from find import views
 urlpatterns = [
     url(r'^$', include('find.urls', namespace="find")),
@@ -12,4 +13,4 @@ urlpatterns = [
         views.wrong_location, name='wrong_location'),
 
 
-]
+]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
