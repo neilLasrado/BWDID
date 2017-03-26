@@ -1,6 +1,9 @@
 from django.conf.urls import include, url
+from django.conf import settings
+
 from django.conf.urls.static import static
 from find import views
+
 urlpatterns = [
     url(r'^$', include('find.urls', namespace="find")),
     url(r'^bars\/(?P<location>/*.+)$',
@@ -8,5 +11,5 @@ urlpatterns = [
     url(r'^cafe\/(?P<location>/*.+)$',
         views.get_cafes, name='cafe'),
     url(r'^wronglocation$',
-        views.wrong_location, name='wrong_location'),
-]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+        views.wrong_location, name='wrong_location')
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
