@@ -31,6 +31,6 @@ def get_restaurants(latitude, longitude, establishment_type):
 
     # In case the list is blank, requery with no establishment type to broaden the search
     if len(bars_list) <= 0 and establishment_type:
-      return get_bars(latitude, longitude, '')
+      return get_restaurants(latitude, longitude, '')
 
     return bars_list
