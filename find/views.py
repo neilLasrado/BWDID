@@ -12,8 +12,8 @@ def get_drunk(request, location):
     longitude = coordinates[1]
     bars_list = get_restaurants(latitude, longitude, '')
     return render(request, 'find/bars.html', {'bars_list': bars_list,
-                                                     'lat': latitude,
-                                                     'longi': longitude})
+                                              'lat': latitude,
+                                              'longi': longitude})
 
 
 def get_cafes(request, location):
@@ -33,8 +33,8 @@ def get_parties(request, location):
     longitude = coordinates[1]
     parties_list = get_restaurants(latitude, longitude, '')
     return render(request, 'find/party.html', {'parties_list': parties_list,
-                                                  'lat': latitude,
-                                                  'longi': longitude})
+                                               'lat': latitude,
+                                               'longi': longitude})
 
 
 def wrong_location(request):
